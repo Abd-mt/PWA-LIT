@@ -7,12 +7,14 @@ export class NameTag extends LitElement {
   name: string = 'Your name here';
 
   render() {
-    // TODO: Add declarative event listener to input.
     return html`
       <p>Hello, ${this.name}</p>
-      <input placeholder="Enter your name">
+      <input @input=${this.changeName} placeholder="Enter your name">
     `;
   }
 
-  // TODO: Add event handler method.
+  changeName(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.name = input.value;
+  }
 }
