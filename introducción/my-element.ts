@@ -9,8 +9,7 @@ export class MoreExpressions extends LitElement {
   render() {
     return html`
       <div>
-         <!-- TODO: Add expression to input. -->
-         <input type="text" value="Hello there.">
+        <input type="text" ?disabled=${!this.checked} value="Hello there.">
       </div>
       <label><input type="checkbox" @change=${this.setChecked}> Enable editing</label>
     `;
