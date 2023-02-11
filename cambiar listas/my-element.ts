@@ -10,7 +10,9 @@ class MyElement extends LitElement {
     return html`
       <p>A list of names that include the letter "e"</p>
       <ul>
-        <!-- TODO: Render list items of filtered names. -->
+      ${this.names
+        .filter((name) => name.match(/e/i))
+        .map((name) => html`<li>${name}</li>`)}
       </ul>
     `;
   }
