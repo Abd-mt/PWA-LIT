@@ -3,7 +3,8 @@ import {customElement, property} from 'lit/decorators.js';
 
 @customElement('my-element')
 export class MyElement extends LitElement {
-  result = '';
+  @property()
+  result: string = '';
 
   flipCoin() {
     if (Math.random() < 0.5) {
